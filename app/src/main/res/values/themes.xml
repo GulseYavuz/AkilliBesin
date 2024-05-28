@@ -2,8 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.Careium" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- App Theme Colors -->
-        <item name="colorPrimary">@color/green_500</item>
-        <item name="colorPrimaryVariant">@color/green_dark</item> <!--TODO: should be green_light-->
+        <item name="colorPrimary">@color/white</item>
         <item name="colorSecondary">@color/orange_700</item>
         <item name="colorSecondaryVariant">@color/orange_light</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -31,14 +30,14 @@
     <style name="Theme.white" parent="Theme.AppCompat.NoActionBar">
         <!-- App Theme Colors -->
         <item name="colorPrimary">@color/white</item>
-        <item name="colorSecondary">@color/green_500</item>
+        <item name="colorSecondary">@color/white</item>
         <item name="android:fontFamily">@font/comicz</item>
     </style>
 
     <style name="Theme.custom_button" parent="Theme.AppCompat.NoActionBar">
         <!-- App Theme Colors -->
         <item name="colorPrimary">@color/white_blue</item>
-        <item name="colorSecondary">@color/green_500</item>
+        <item name="colorSecondary">@color/white</item>
         <item name="android:fontFamily">@font/comicz</item>
     </style>
 

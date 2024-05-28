@@ -1,7 +1,7 @@
 package com.example.careium.core.models
 
 import android.content.Context
-import com.example.careium.ml.NutritionModel
+import com.example.careium.ml.MobileNet
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import kotlin.math.abs
 
@@ -20,7 +20,7 @@ class DishNutritionRegression() : DeepLearning() {
 
 
     fun predictNutritionModel(inputFeature: TensorBuffer): ArrayList<Float> {
-        val model = NutritionModel.newInstance(context!!)
+        val model = MobileNet.newInstance(context!!)
 
         // Runs model inference and gets result.
         val outputs = model.process(inputFeature)

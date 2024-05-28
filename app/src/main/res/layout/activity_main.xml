@@ -23,7 +23,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:animateLayoutChanges="true"
-            android:background="?attr/colorPrimaryVariant">
+            android:background="@color/warm_grey">
 
             <FrameLayout
                 android:id="@+id/layout_main_frame"
@@ -45,12 +45,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:fabCradleMargin="20dp"
-            app:mbn_backgroundBottomColor="?attr/colorPrimary"
+            app:mbn_backgroundBottomColor="@color/warm_grey"
             app:mbn_circleColor="@color/white"
             app:mbn_countBackgroundColor="?attr/colorSecondary"
             app:mbn_countTextColor="?attr/colorOnSecondary"
             app:mbn_defaultIconColor="@color/white"
-            app:mbn_selectedIconColor="?attr/colorPrimary" />
+            app:mbn_selectedIconColor="@color/warm_grey" />
 
     </LinearLayout>
 

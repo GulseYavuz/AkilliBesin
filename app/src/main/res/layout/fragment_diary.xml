@@ -23,7 +23,7 @@
         android:layout_height="match_parent"
         android:layout_above="@id/AddNoteBtn"
         android:layout_below="@id/Title"
-        android:background="@color/green_dark" />
+        android:background="@color/warm_grey" />
 
     <Button
         android:id="@+id/AddNoteBtn"

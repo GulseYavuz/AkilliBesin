@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/xx_large_spacing"
         android:layout_marginBottom="@dimen/small_spacing"
-        android:background="@color/green_dark"
-        app:cardBackgroundColor="@color/green_dark">
+        android:background="@color/warm_grey"
+        app:cardBackgroundColor="@color/warm_grey">
 
         <RelativeLayout
             android:id="@+id/breakfast_relative"
@@ -83,8 +83,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/large_spacing"
         android:layout_marginBottom="@dimen/small_spacing"
-        android:background="@color/green_dark"
-        app:cardBackgroundColor="@color/green_dark">
+        android:background="@color/warm_grey"
+        app:cardBackgroundColor="@color/warm_grey">
 
         <RelativeLayout
             android:id="@+id/lunch_relative"
@@ -153,8 +153,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/large_spacing"
         android:layout_marginBottom="@dimen/small_spacing"
-        android:background="@color/green_dark"
-        app:cardBackgroundColor="@color/green_dark">
+        android:background="@color/warm_grey"
+        app:cardBackgroundColor="@color/warm_grey">
 
         <RelativeLayout
             android:id="@+id/dinner_relative"
@@ -223,8 +223,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/large_spacing"
         android:layout_marginBottom="@dimen/small_spacing"
-        android:background="@color/green_dark"
-        app:cardBackgroundColor="@color/green_dark">
+        android:background="@color/warm_grey"
+        app:cardBackgroundColor="@color/warm_grey">
 
         <RelativeLayout
             android:id="@+id/snack_relative"
