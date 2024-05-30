@@ -1,18 +1,19 @@
 package com.example.akillibesin.core.models
 
-import com.example.akillibesin.frontend.factory.FutureGoal
-import com.example.akillibesin.frontend.factory.Gender
+
 
 class User {
     var name: String = ""
     var email: String = ""
     var password: String = ""
+/*
     var height: Float = 0f
     var weight: Float = 0f
     var age: Int = 0
     var gender: Gender? = null
     var desiredWeight: Float = 0f
     var futureGoal: FutureGoal? = null
+*/
 
 
     companion object {
@@ -26,12 +27,12 @@ class User {
             _instance.name = ""
             _instance.email = ""
             _instance.password = ""
-            _instance.height = 0f
+/*            _instance.height = 0f
             _instance.weight = 0f
             _instance.age = 0
             _instance.gender = null
             _instance.desiredWeight = 0f
-            _instance.futureGoal = null
+            _instance.futureGoal = null*/
         }
     }
 

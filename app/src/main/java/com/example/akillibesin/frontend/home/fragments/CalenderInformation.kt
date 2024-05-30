@@ -1,3 +1,4 @@
+/*
 package com.example.akillibesin.frontend.home.fragments
 
 import android.os.Build
@@ -41,4 +42,4 @@ class CalenderInformation {
         numOfFields += getNumberOfDaysInMonth(year, startMonth) - startDay + 1
         return numOfFields
     }
-}
+}*/

@@ -86,7 +86,6 @@ class FoodNutrition {
         } catch (e: Exception) {
             Log.d("database", "There are exception in food nutrition DB")
         }
-
     }
 
 }

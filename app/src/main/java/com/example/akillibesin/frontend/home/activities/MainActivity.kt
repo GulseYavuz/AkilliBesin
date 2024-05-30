@@ -64,7 +64,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         userDataViewModel = ViewModelProviders.of(this).get(UserDataViewModel::class.java)
-        //observeUserDataCallBackChange()
 
         if (InternetConnection.isConnected(this)) {
             val userData = UserData()
@@ -98,7 +97,6 @@ class MainActivity : AppCompatActivity() {
         binding.layoutToolbar.imageNotifications.setOnClickListener {
             loadFragment(ReminderFragment.newInstance())
         }
-
     }
 
     private fun initializeBottomNavigation() {
@@ -199,7 +197,6 @@ class MainActivity : AppCompatActivity() {
                     View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
                     View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
                     View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
-                    // View.SYSTEM_UI_FLAG_FULLSCREEN or // for Status bar
                     View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
         }
 
@@ -211,18 +208,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun dispatchTouchEvent(event: MotionEvent?): Boolean {
-        // TODO: Uncheck this comment for swiping action
-        // Handle Swipe Up action
-        /*if (swipeListener.isSwipedUp(event))
-            capturePlate()
-        */
-
         // Collapse FAB Menu and clear the overlay
         if (actionMenu.isOpen) {
             binding.layoutMainFrameOverlay.visibility = View.INVISIBLE
             actionMenu.close(true)
         }
-
         return super.dispatchTouchEvent(event)
     }
 
@@ -245,15 +235,11 @@ class MainActivity : AppCompatActivity() {
 
         try {
             val nutritionList = makeRegressionPredictions(dishImage)
-           // val className = makeClassificationPrediction(dishImage)
 
             // Update MutableLiveData to display the output
             nutritionViewModel.mutableNutrition.value = nutritionList
-        //    classifierViewModel.mutableDishName.value = className
             classifierViewModel.mutableDishImage.value = BitmapDrawable(resources, dishImage)
 
-            // store the food data in the firebase
-         //   saveFoodDataInDatabase(className, nutritionList)
         } catch (e: Exception) {
             Log.d("DLModels", "Exception Occurred in DL Models")
         }
@@ -265,13 +251,6 @@ class MainActivity : AppCompatActivity() {
         val tensorBuffer = nutrition.loadImageBuffer(dishImage, 224, 224)
         return (nutrition.predictNutritionModel(tensorBuffer))
     }
-
-/*    private fun makeClassificationPrediction(dishImage: Bitmap): String {
-        val classifier = DishClassification(this)
-        val tensorBuffer2 = classifier.loadImageBuffer(dishImage, 250, 250)
-        return classifier.classifyDish(tensorBuffer2)
-    }*/
-
     private fun saveFoodDataInDatabase(foodName: String, nutritionList: ArrayList<Float>) {
         val foodData = FoodData(foodName, nutritionList)
         foodData.saveFoodData()
@@ -369,15 +348,6 @@ class MainActivity : AppCompatActivity() {
         val preference = SharedPreferences(this)
         preference.delete()
     }
-
-  /*  private fun observeUserDataCallBackChange() {
-        userDataViewModel.mutableUserData.observe(this) { user ->
-            if (user != null) {
-                binding.navigationView.getHeaderView(0)
-                    .findViewById<TextView>(R.id.text_user_name).text = user.name
-            }
-        }
-    }*/
 
     private fun logout() {
         if (InternetConnection.isConnected(this)) {

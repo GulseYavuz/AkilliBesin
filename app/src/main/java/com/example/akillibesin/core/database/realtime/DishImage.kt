@@ -91,7 +91,6 @@ class DishImage {
                         Toast.LENGTH_LONG
                     ).show()
                 }
-
         }
 
     }

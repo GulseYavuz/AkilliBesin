@@ -259,11 +259,11 @@ class ReportsFragment : Fragment(R.layout.fragment_reports) {
             if (user != null) {
                 binding.waitContainer.visibility = View.GONE
                 // calculate basal metabolic rate (BMR)
-                var bmr = (10 * user.weight) + (6.25 * user.height) - (5 * user.age)
+                /*     var bmr = (10 * user.weight) + (6.25 * user.height) - (5 * user.age)
                 if (user.gender == Gender.Male) bmr += 5
                 else bmr -= 161
-
-                binding.layoutCalsItem.progressCmpnt.max = (bmr * 7).toInt()
+*/
+                /*      binding.layoutCalsItem.progressCmpnt.max = (bmr * 7).toInt()
                 binding.layoutCalsItem.textCmpntTarget.text =
                     getString(R.string.cal_val, (bmr * 7).toInt())
 
@@ -300,8 +300,8 @@ class ReportsFragment : Fragment(R.layout.fragment_reports) {
                 val rounded =
                     String.format("%.1f", remainingCalories / 2500)// 2500 calories for every KG
                 binding.reportWeight.text = "$rounded KG"
+            }*/
             }
-
         }
     }
 

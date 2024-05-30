@@ -47,8 +47,6 @@
     <!-- Navigation Labels -->
     <string name="app_name">Akıllı Besin</string>
     <string name="app_full_name">Akıllı Besin</string>
-    <string name="app_name_first_part">Care</string>
-    <string name="app_name_second_part">ium</string>
     <string name="home">Ana Menü</string>
     <string name="diary">Günlük</string>
     <string name="recipes">Tarifler</string>
@@ -58,10 +56,6 @@
     <string name="others">Others</string>
     <string name="settings">Ayarlar</string>
     <string name="help">Yardım</string>
-    <string name="sync">Sync</string>
-    <string name="logout">Logout</string>
-    <string name="verified">Verified</string>
-    <string name="username">Mark Elliot Zuckerberg</string>
 
     <!-- Home Fragment -->
     <string name="calories_remaining">Kalan Kalori Miktarı</string>
@@ -113,11 +107,11 @@
     <string name="dish_image">Dish Image</string>
 
     <!-- Notes -->
-    <string name="add_new_note">Add New Note</string>
-    <string name="title_text">Title</string>
-    <string name="description_text">Description</string>
-    <string name="save_note">Save Note</string>
-    <string name="title_Diary">Diary</string>
+    <string name="add_new_note">Yeni Not Ekle</string>
+    <string name="title_text">Başlık</string>
+    <string name="description_text">Açıklama</string>
+    <string name="save_note">Notu Kaydet</string>
+    <string name="title_Diary">Günlük</string>
 
     <!--Reminder fragment -->
     <string name="set">Set</string>

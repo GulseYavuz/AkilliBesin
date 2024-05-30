@@ -9,10 +9,8 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.akillibesin.R
 import com.example.akillibesin.core.database.authentication.InternetConnection
 import com.example.akillibesin.core.database.realtime.UserData
-import com.example.akillibesin.core.models.User
 import com.example.akillibesin.databinding.FragmentHomeBinding
 import com.example.akillibesin.frontend.factory.ClassifierViewModel
-import com.example.akillibesin.frontend.factory.Gender
 import com.example.akillibesin.frontend.factory.NutritionViewModel
 import com.example.akillibesin.frontend.home.activities.classifierViewModel
 import com.example.akillibesin.frontend.factory.UserDataViewModel
@@ -81,25 +79,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun observeUserDataCallBackChange() {
         userDataViewModel.mutableUserData.observe(viewLifecycleOwner) { user ->
             if (user != null) {
-                caloriesTarget = calBMR(user)
                 progressVal = caloriesTarget
-                binding.progressHomeCircular.max = caloriesTarget
                 updateProgress()
             }
         }
     }
 
-    private fun calBMR(user: User): Int {
-        var bmr = (10 * user.weight) + (6.25 * user.height) - (5 * user.age)
-        if (user.gender == Gender.Male) bmr += 5
-        else bmr -= 161
-
-        return bmr.toInt()
-    }
-
     private fun hookTargets() {
         // Setting COMPONENTS progress max value
-        binding.progressHomeCircular.max = caloriesTarget
         binding.layoutCalsItem.progressCmpnt.max = caloriesTarget
         binding.layoutCarbsItem.progressCmpnt.max = carbsTarget.toInt()
         binding.layoutFatsItem.progressCmpnt.max = fatsTarget.toInt()
@@ -148,26 +135,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun hookProgressSection() {
         updateProgress()
-        /*
-          binding.progressHomeCircular.setOnClickListener {
-                if (progressVal > 100) {
-                    progressVal -= 100
-                    caloriesVal += 100
-                    caloriesTarget -= 100
-                    updateProgress()
-                } else {
-                    progressVal = 0
-                    //caloriesVal = 0
-                    caloriesTarget = 3000
-                    updateProgress()
-                }
-            }
-        */
     }
 
     private fun updateProgress() {
-        binding.progressHomeCircular.progress = progressVal
-        binding.texTProgressHome.text = "$progressVal"
         updateComponentsSection()
     }
 
@@ -223,14 +193,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun observeClassification() {
         classifierViewModel = ViewModelProviders.of(this).get(ClassifierViewModel::class.java)
 
-        classifierViewModel.mutableDishName.observe(viewLifecycleOwner) { predictedClass ->
-            binding.textLastCaptured.text = predictedClass
-        }
-
         classifierViewModel.mutableDishImage.observe(viewLifecycleOwner) { dishImage ->
             binding.imageLastCaptured.setImageDrawable(dishImage)
             binding.cardLastCaptured.visibility = View.VISIBLE
         }
     }
-
 }

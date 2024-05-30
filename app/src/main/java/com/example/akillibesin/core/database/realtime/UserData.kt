@@ -2,8 +2,6 @@ package com.example.akillibesin.core.database.realtime
 
 import android.util.Log
 import com.example.akillibesin.core.models.User
-import com.example.akillibesin.frontend.factory.FutureGoal
-import com.example.akillibesin.frontend.factory.Gender
 import com.example.akillibesin.frontend.factory.UserDataViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -21,7 +19,7 @@ class UserData : Thread() {
             val userID: String? = this.authInstance.currentUser?.uid
             val root = FirebaseDatabase.getInstance().reference.child("users").child(userID!!)
             root.child("name").setValue(this.user.name)
-            root.child("age").setValue(this.user.age)
+          /*  root.child("age").setValue(this.user.age)
             root.child("gender").setValue(this.user.gender)
             root.child("email").setValue(this.user.email)
             root.child("password").setValue(this.user.password)
@@ -29,7 +27,7 @@ class UserData : Thread() {
             root.child("weight").setValue(this.user.weight)
             root.child("future_goal").setValue(this.user.futureGoal)
             root.child("desired_weight").setValue(this.user.desiredWeight)
-
+*/
         } catch (e: Exception) {
             Log.d("database", "There are exception in storing user data")
         }
@@ -70,15 +68,15 @@ class UserData : Thread() {
     private fun setUserData(snapshot: DataSnapshot, user: User) {
         when (snapshot.key) {
             "name" -> user.name = snapshot.value.toString()
-            "age" -> user.age = snapshot.value.toString().toInt()
+            //"age" -> user.age = snapshot.value.toString().toInt()
             "email" -> user.email = snapshot.value.toString()
             "password" -> user.password = snapshot.value.toString()
-            "height" -> user.height = snapshot.value.toString().toFloat()
+            /*"height" -> user.height = snapshot.value.toString().toFloat()
             "weight" -> user.weight = snapshot.value.toString().toFloat()
-            "desired_weight" -> user.desiredWeight = snapshot.value.toString().toFloat()
+            "desired_weight" -> user.desiredWeight = snapshot.value.toString().toFloat()*/
         }
 
-        if (snapshot.key.toString() == "gender") {
+      /*  if (snapshot.key.toString() == "gender") {
             if (snapshot.value.toString() == "Male") user.gender = Gender.Male
             else user.gender = Gender.Female
         } else if (snapshot.key.toString() == "future_goal") {
@@ -89,7 +87,7 @@ class UserData : Thread() {
                     FutureGoal.FitnessTracker
                 else -> user.futureGoal = FutureGoal.PatientTreatment
             }
-        }
+        }*/
     }
 
 }

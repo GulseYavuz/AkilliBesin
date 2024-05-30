@@ -69,49 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/transparent_back_oval">
-
-            <ProgressBar
-                android:id="@+id/progress_home_circular"
-                android:layout_width="@dimen/progress_circular_dimen"
-                android:layout_height="@dimen/progress_circular_dimen"
-                android:layout_centerInParent="true"
-                android:indeterminateOnly="false"
-                android:progressDrawable="@drawable/dw_determinate_circular_progress"
-                tools:progress="70" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="@dimen/small_spacing">
-
-                <TextView
-                    android:id="@+id/texT_progress_home"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:elevation="@dimen/elevation_scale"
-                    android:fontFamily="sans-serif-condensed"
-                    android:padding="@dimen/tiny_spacing"
-                    android:scaleX="1.0"
-                    android:scaleY="1.5"
-                    android:textColor="?attr/colorSecondary"
-                    android:textSize="54sp"
-                    android:textStyle="bold"
-                    tools:text="2820" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/tiny_spacing"
-                    android:scaleX="0.8"
-                    android:text="@string/calories_remaining"
-                    android:textSize="@dimen/small_text_size" />
-            </LinearLayout>
-
-        </RelativeLayout>
+            android:background="@drawable/transparent_back_oval"/>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -120,9 +78,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/small_spacing"
         android:clickable="true"
+        android:visibility="gone"
         android:focusable="true"
         android:foreground="?selectableItemBackground"
-        android:visibility="gone"
         app:cardBackgroundColor="?attr/colorPrimaryVariant"
         app:cardCornerRadius="@dimen/large_card_radius"
         app:cardElevation="@dimen/elevation_card"
@@ -130,35 +88,32 @@
 
         <RelativeLayout
             android:id="@+id/layout_last_captured"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="376dp"
+            android:layout_height="142dp"
             android:layout_gravity="center">
+
 
             <ImageView
                 android:id="@+id/image_last_captured"
-                android:layout_width="@dimen/icons_dims_s3"
-                android:layout_height="@dimen/icons_dims_s3"
+                android:layout_width="157dp"
+                android:layout_height="91dp"
                 android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="19dp"
+                android:layout_marginEnd="200dp"
+                android:layout_marginBottom="25dp"
                 tools:ignore="ContentDescription"
-                tools:src="@mipmap/ic_launcher" />
-
-            <TextView
-                android:id="@+id/text_last_captured"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toEndOf="@id/image_last_captured"
-                android:paddingStart="@dimen/medium_spacing"
-                android:paddingEnd="@dimen/medium_spacing"
-                tools:text="Pasta" />
+                tools:src="@drawable/logo" />
 
             <TextView
                 android:id="@+id/text_last_captured_placeholder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
+                android:layout_marginTop="52dp"
+                android:layout_marginEnd="27dp"
                 android:text="@string/last_tracked_image"
                 android:textColor="@color/grey_dark"
                 tools:ignore="RelativeOverlap" />

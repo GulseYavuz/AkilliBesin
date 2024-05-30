@@ -50,15 +50,6 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 alert(getString(R.string.error_title), getString(R.string.error_message))
             }
         }
-
-     /*   binding.forgetPassword.setOnClickListener {
-            activity?.supportFragmentManager?.beginTransaction()
-                ?.replace(R.id.auth_frame, ResetPasswordFragment.newInstance())
-                ?.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                //?.addToBackStack(null)
-                ?.commit()
-        }*/
-
     }
 
     fun isValidLoginInput(

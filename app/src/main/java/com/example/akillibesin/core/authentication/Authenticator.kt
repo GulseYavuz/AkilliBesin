@@ -12,13 +12,7 @@ import com.example.akillibesin.frontend.authentication.activities.Authentication
 import com.example.akillibesin.frontend.authentication.fragments.LoginFragment
 import com.example.akillibesin.frontend.factory.AuthTitleViewModel
 
-/**
- * This is the Core Authenticator which implements the Login and Register Transfer Actions.
- *
- * @author Kareem Sherif
- * @see AuthenticationInterface
- * @see AuthenticationActivity
- */
+
 class Authenticator : AppCompatActivity(), AuthenticationInterface {
 
     private val authCompatActivity = AuthenticationActivity.instance as AppCompatActivity
@@ -29,14 +23,6 @@ class Authenticator : AppCompatActivity(), AuthenticationInterface {
             .get(AuthTitleViewModel::class.java)
     }
 
-    /**
-     * It gets the **AuthenticationActivity** Intent String Extra to fire the action of loading
-     * the specified fragment from the known option (Login/Register) also, fires the **AuthTitle**
-     * Observer to update the Toolbar Title text whenever changed using Mutable Live Data.
-     *
-     * @author Kareem Sherif
-     * @see AuthenticationActivity
-     */
     fun authenticate() {
         val option = AuthenticationActivity.instance.intent
             .getStringExtra("AuthOption").toString()
@@ -44,7 +30,6 @@ class Authenticator : AppCompatActivity(), AuthenticationInterface {
 
         when (option) {
             "login" -> loadFragment(LoginFragment.newInstance())
-           // "register" -> loadFragment(RegisterFragment.newInstance())
             else -> Toast.makeText(AuthenticationActivity.instance,
                 authCompatActivity.getString(R.string.something_wrong), Toast.LENGTH_SHORT).show()
         }
@@ -54,14 +39,6 @@ class Authenticator : AppCompatActivity(), AuthenticationInterface {
             updateAuthToolbarTitle(fragmentTitle)
         }
     }
-
-    /**
-     * Loads a given **Fragment** through the **SupportFragmentManager** into the **auth_frame**
-     * included in **activity_authentication.xml** layout
-     *
-     * @author Kareem Sherif
-     * @see AuthenticationActivity
-     */
     private fun loadFragment(fragment: Fragment) {
         authCompatActivity.supportFragmentManager.beginTransaction()
             .replace(R.id.auth_frame, fragment)

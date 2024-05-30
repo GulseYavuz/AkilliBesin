@@ -25,15 +25,14 @@ class ImageGalleryFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() =
-            HomeFragment().apply {}
+        fun newInstance() = ImageGalleryFragment().apply {}
     }
 
     private val permissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
         if (isGranted) {
             openGallery()
         } else {
-            Log.e("ImageFragment", "Permission denied")
+            Log.e("ImageGalleryFragment", "Permission denied")
         }
     }
 
@@ -44,9 +43,9 @@ class ImageGalleryFragment : Fragment() {
             if (selectedImageUri != null) {
                 val bitmap = getBitmapFromUri(selectedImageUri)
                 handleSelectedImage(bitmap)
-                imageViewModel.selectedImageBitmap = bitmap // ViewModel'e bitmap'i aktar
+                imageViewModel.selectedImageBitmap = bitmap // Store the bitmap in the ViewModel
             } else {
-                Log.e("ImageFragment", "Selected image URI is null")
+                Log.e("ImageGalleryFragment", "Selected image URI is null")
             }
         }
     }
@@ -61,8 +60,12 @@ class ImageGalleryFragment : Fragment() {
     }
 
     private fun handleSelectedImage(bitmap: Bitmap?) {
-        binding.imageView.setImageBitmap(bitmap)
-        binding.imageView.visibility = View.VISIBLE
+        if (bitmap != null) {
+            binding.imageView.setImageBitmap(bitmap)
+            binding.imageView.visibility = View.VISIBLE
+        } else {
+            Log.e("ImageGalleryFragment", "Bitmap is null")
+        }
     }
 
     private fun getBitmapFromUri(uri: Uri): Bitmap? {
@@ -71,7 +74,7 @@ class ImageGalleryFragment : Fragment() {
                 BitmapFactory.decodeStream(inputStream)?.copy(Bitmap.Config.ARGB_8888, true)
             }
         } catch (e: Exception) {
-            Log.e("ImageFragment", "Failed to load image from URI", e)
+            Log.e("ImageGalleryFragment", "Failed to load image from URI", e)
             null
         }
     }
@@ -81,6 +84,11 @@ class ImageGalleryFragment : Fragment() {
 
         imageViewModel = ViewModelProvider(requireActivity()).get(ImageViewModel::class.java)
 
+        // Restore the image if available
+        imageViewModel.selectedImageBitmap?.let {
+            handleSelectedImage(it)
+        }
+
         binding.btnUpload.setOnClickListener {
             if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE) ==
                 PermissionChecker.PERMISSION_GRANTED) {
@@ -88,10 +96,6 @@ class ImageGalleryFragment : Fragment() {
             } else {
                 permissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
             }
-        }
-
-        binding.btnMeasure.setOnClickListener {
-            // Ölçüm butonu için gerekli işlemler burada yapılacak
         }
     }
 
