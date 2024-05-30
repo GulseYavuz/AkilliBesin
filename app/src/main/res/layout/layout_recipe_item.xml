@@ -14,7 +14,7 @@
         android:layout_height="@dimen/recipe_image_dims"
         android:contentDescription="@string/recipes"
         android:scaleType="centerCrop"
-        tools:src="@mipmap/ic_launcher" />
+        tools:src="@drawable/logo" />
 
     <TextView
         android:id="@+id/recipe_text"

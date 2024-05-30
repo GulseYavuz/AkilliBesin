@@ -1,6 +1,6 @@
 package test.frontend.authentication.fragments
 
-import com.example.careium.frontend.authentication.fragments.RegisterFragment
+import com.example.akillibesin.frontend.authentication.fragments.RegisterFragment
 import org.junit.Assert.*
 import org.junit.Before
 

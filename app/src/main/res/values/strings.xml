@@ -4,7 +4,7 @@
     <string name="auth_toolbar_title">%1$s</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
-    <string name="welcome_msg">Welcome to</string>
+    <string name="welcome_msg">Hoş Geldiniz</string>
     <string name="something_wrong">Something went wrong!!</string>
     <string name="auth_option">AuthOption</string>
     <string name="fill_data">Fill your Data</string>
@@ -49,29 +49,29 @@
     <string name="app_full_name">Akıllı Besin</string>
     <string name="app_name_first_part">Care</string>
     <string name="app_name_second_part">ium</string>
-    <string name="home">Home</string>
-    <string name="diary">Diary</string>
-    <string name="recipes">Recipes</string>
+    <string name="home">Ana Menü</string>
+    <string name="diary">Günlük</string>
+    <string name="recipes">Tarifler</string>
     <string name="diet_calender">Diet Calender</string>
-    <string name="reminder">Reminder</string>
+    <string name="reminder">Hatırlatıcı</string>
     <string name="photo_album">Photo Album</string>
     <string name="others">Others</string>
-    <string name="settings">Settings</string>
-    <string name="help">Help</string>
+    <string name="settings">Ayarlar</string>
+    <string name="help">Yardım</string>
     <string name="sync">Sync</string>
     <string name="logout">Logout</string>
     <string name="verified">Verified</string>
     <string name="username">Mark Elliot Zuckerberg</string>
 
     <!-- Home Fragment -->
-    <string name="calories_remaining">Calories Remaining</string>
-    <string name="calories">Calories</string>
-    <string name="carbs">Carbs</string>
-    <string name="fats">Fats</string>
-    <string name="proteins">Proteins</string>
+    <string name="calories_remaining">Kalan Kalori Miktarı</string>
+    <string name="calories">Kalori</string>
+    <string name="carbs">Karbonhidrat</string>
+    <string name="fats">Yağ</string>
+    <string name="proteins">Protein</string>
     <string name="cal_val">/%1$d cal</string>
     <string name="gram_val">/%1$.2f g</string>
-    <string name="last_tracked_image">Last Tracked Image</string>
+    <string name="last_tracked_image">Son Kaydedilen Resim</string>
 
     <!--  Profile Fragment  -->
     <string name="name">Name</string>
@@ -122,11 +122,11 @@
     <!--Reminder fragment -->
     <string name="set">Set</string>
     <string name="cancel">Cancel</string>
-    <string name="breakfast">Breakfast</string>
+    <string name="breakfast">Kahvaltı</string>
     <string name="time">00:00</string>
-    <string name="lunch">Lunch</string>
-    <string name="dinner">Dinner</string>
-    <string name="snack">Snack</string>
+    <string name="lunch">Öğle Yemeği</string>
+    <string name="dinner">Akşam Yemeği</string>
+    <string name="snack">Atıştırmalık</string>
 
     <string name="food_name">Food Name:</string>
     <string name="food_calories">Food Calories:</string>
@@ -135,5 +135,7 @@
     <string name="lunch_image">lunch image</string>
     <string name="dinner_image">dinner image</string>
     <string name="snack_image">snack image</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

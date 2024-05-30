@@ -1,4 +1,4 @@
-package com.example.careium.frontend.home.activities
+package com.example.akillibesin.frontend.home.activities
 
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.*
@@ -18,22 +18,22 @@ internal class MainActivityTest {
     //check if the "main activity" is visible
     @Test
     fun checkActivityVisibility() {
-        onView(withId(com.example.careium.R.id.drawer_layout))
+        onView(withId(com.example.akillibesin.R.id.drawer_layout))
             .check(matches(isDisplayed()))
     }
 
     @Test
     fun checkTextVisibility() {
         //check if the "welcome label" is visible
-        onView(withId(com.example.careium.R.id.welcome_label))
+        onView(withId(com.example.akillibesin.R.id.welcome_label))
             .check(matches(isDisplayed()))
 
         //check if "login button" is visible
-        onView(withId(com.example.careium.R.id.login_btn))
+        onView(withId(com.example.akillibesin.R.id.login_btn))
             .check(matches(isDisplayed()))
 
         //check if "register button" is visible
-        onView(withId(com.example.careium.R.id.register_btn))
+        onView(withId(com.example.akillibesin.R.id.register_btn))
             .check(matches(isDisplayed()))
     }
 }

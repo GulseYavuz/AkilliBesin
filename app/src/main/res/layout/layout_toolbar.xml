@@ -55,12 +55,12 @@
 
         <ImageView
             android:id="@+id/imageViewLogo"
-            android:layout_width="319dp"
+            android:layout_width="314dp"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="44dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="0dp"
             app:srcCompat="@drawable/logo" />
     </RelativeLayout>
 
